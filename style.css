@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  background-color: #0d0b13;
+  color: white;
+  position: relative;
+  min-height: 100%;
+}
+html {
+  height: 100%;
+}
+
+header {
+  margin: 1rem auto;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+}
+header h1 {
+  width: 100%;
+  margin: 0 0 0.5rem;
+}
+.search {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  cursor: pointer;
+}
+.search .serach-input {
+  width: 100%;
+  font-size: 1.3rem;
+  border-radius: 2rem;
+  background-color: #292625;
+  border: hidden;
+  padding: 0.4rem 1rem;
+  color: white;
+}
+.container {
+  height: 90%;
+  overflow: scroll;
+}
+
+.container :-webkit-scrollbar {
+  display: none;
+}
+.container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+.container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.search button {
+  border: none;
+  background-color: inherit;
+  color: silver;
+  font-size: 1.5rem;
+  margin-top: 0.3rem;
+}
+
+.note {
+  width: 85%;
+  margin: 1rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.5rem;
+
+  background-color: #221f1f;
+}
+.note-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.note h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+.note p {
+  margin: 0 0 0.5rem;
+  opacity: 0.7;
+  font-size: 1.2rem;
+}
+
+.note p small {
+  opacity: 0.5;
+}
+
+.add-note {
+  position: absolute;
+  bottom: 5rem;
+  right: 2rem;
+}
+.add-note button {
+  cursor: pointer;
+  background-color: rgb(55, 55, 202);
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  color: white;
+}
+
+footer {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 3rem;
+  background-color: #221f1f;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer button {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+footer label {
+  font-size: 1.1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.return-to-main {
+  display: flex;
+  margin: 0 7.5%;
+}
+.return-to-main button {
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  font-size: 2rem;
+  color: rgb(33, 52, 160);
+  margin: 0.3rem;
+}
+.input-form {
+  justify-content: center;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+}
+.input-form input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  background-color: #221f1f;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+}
+.input-form textarea {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  background-color: #221f1f;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+}
+.input-form button {
+  width: 30%;
+  cursor: pointer;
+  margin: 0.5rem auto;
+  padding: 0.3rem 0;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 4rem;
+  border: none;
+  background-color: rgb(33, 52, 160);
+}
+.input-form button:hover {
+  background-color: rgb(23, 36, 109);
+}
+
+.error-message {
+  margin: 0;
+  color: rgb(250, 7, 7);
+  font-size: 1.2rem;
+}
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    width: 60%;
+  }
+  .note {
+    width: 60%;
+  }
+  .note-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .return-to-main {
+    margin: 0 20%;
+  }
+  .input-form {
+    margin: 0 20%;
+  }
+}

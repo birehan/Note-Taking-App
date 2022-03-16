@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="main-container" class="container">
+        <header>
+            <h1>Notes</h1>
+            <div class="search">
+                <input onkeyup ="SerachMeal()" class="serach-input" type="text" name="" pl  placeholder="Search notes" id="search-key">
+                <button onclick="SerachMeal()"  id="search"><i class="fa fa-search"></i></button>
+            </div>
+        </header>
+
+        <div id="notes-container" class="main note-list">
+        </div>
+
+        <div class="add-note">
+            <button id="add-new-note"><i class="fa fa-plus"></i></button>
+           
+        </div>
+
+        <div id="snackbar">Note saved successfully.</div>
+
+        <footer>
+            <button id="notes-button"><i class="fa fa-align-right"></i></button>
+            <label for="viewNotes">Notes</label>
+        </footer>
+    </div>
+
+    <div id="add-note-container" class="write-note-container hidden">
+        <div class="return-to-main">
+
+            <button id="return-to-main"><i class="fa fa-long-arrow-left"></i></button>
+            <h2>Notes</h2>
+        </div>
+      
+        <div class="input-form">
+            <input type="text" name="title" placeholder="Title" id="title">
+            <p id="error-title" class="error-message hidden">Title can not be less than 5 charaters.</p>
+            <textarea  name="description" id="description" 
+            placeholder="Note something down" rows="7"></textarea>
+            <p id="error-desciption" class="error-message hidden">description can not be less than 10 charaters.</p>
+            <button id="save-note"  type="submit">Save</button>
+        </div>
+         
+    </div>
+
+    
+
+<script src="script.js"></script>
+</body>
+</html>
